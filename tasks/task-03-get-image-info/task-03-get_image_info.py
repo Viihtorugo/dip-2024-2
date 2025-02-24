@@ -15,10 +15,17 @@ def get_image_info(image):
     ### START CODE HERE ###
     ### TODO
     
+    
     height = image.shape[0]
     width = image.shape[1]
     dtype = image.dtype
+    
     depth = int(''.join(filter(str.isdigit, str(dtype))))
+
+    if len(image.shape) == 3:
+        #profundidade = número de bits * número de canais (rgb tem 3 canais..)
+        depth *= image.shape[2]
+    
     min_val = image.min()
     max_val = image.max()
     mean_val = image.mean()
