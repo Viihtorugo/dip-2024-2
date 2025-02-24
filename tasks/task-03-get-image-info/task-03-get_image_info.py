@@ -45,7 +45,7 @@ info = get_image_info(sample_image)
 for key, value in info.items():
     print(f"{key}: {value}")
 
-if sample_image is not None:
-    cv.imshow("Imagem", sample_image)
-    cv.waitKey(0)
-    cv.destroyAllWindows()
+#if sample_image is not None:
+    #cv.imshow("Imagem", sample_image)
+    #cv.waitKey(0)
+    #cv.destroyAllWindows()
