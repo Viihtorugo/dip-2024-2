@@ -24,12 +24,16 @@ def load_image_from_url(url, **kwargs):
 
     response = requests.get(url, headers=headers, stream=True)
     
-    #print(response)
+    #print(response) #verificando o codigo do resquest
     
     if response.status_code == 200:
+        
         image_array = np.asarray(bytearray(response.content), dtype=np.uint8)
         flags = kwargs.get("flags", cv.IMREAD_COLOR)
         image = cv.imdecode(image_array, flags)
+        
+        #print(type(image)) # verificando o tipo se é numpy
+
         return image
     else:
         return None
@@ -50,9 +54,10 @@ def main():
     image = load_image_from_url(args.url, flags=flags)
     
     if image is not None:
-        cv.imshow("Imagem", image)
-        cv.waitKey(0)
-        cv.destroyAllWindows()
+        print("Imagem carregada com sucesso!")
+        #cv.imshow("Imagem", image) # para mostrar imagem na máquina local
+        #cv.waitKey(0)
+        #cv.destroyAllWindows()
     else:
         print("Erro ao tentar acessar a url!")
 
