@@ -23,7 +23,6 @@ def linear_combination(i1: np.ndarray, i2: np.ndarray, a1: float, a2: float) -> 
     ### TODO
 
     output = a1 * i1 + a2 * i2
-
     output = np.clip(output, 0, 255).astype(np.uint8)
 
     ### END CODE HERE ###
@@ -45,7 +44,7 @@ if __name__ == "__main__":
     # Compute the linear combination
     output = linear_combination(i1, i2, a1, a2)
 
-    if output is not None:
-        cv2.imshow("Imagem", output)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
+    #if output is not None:
+        #cv2.imshow("Imagem", output)
+        #cv2.waitKey(0)
+        #cv2.destroyAllWindows()
