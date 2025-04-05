@@ -149,6 +149,7 @@ def compare_images(i1: np.ndarray, i2: np.ndarray) -> dict:
     return result
     pass
 
+#import cv2
 #i1 = cv2.imread('img/lena_gray.png', cv2.IMREAD_GRAYSCALE)
 #i2 = cv2.imread('img/lena_gray_noise.png', cv2.IMREAD_GRAYSCALE)
 
