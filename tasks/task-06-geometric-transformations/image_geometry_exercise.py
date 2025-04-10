@@ -28,7 +28,7 @@ The return value should be like:
 """
 
 import numpy as np
-import cv2
+#import cv2
 
 def translated(img, dist = (100, 100)):
     
@@ -171,8 +171,6 @@ def apply_geometric_transformations(img: np.ndarray) -> dict:
     #cv2.destroyAllWindows()
 
     return result
-
-    pass
 
 #img = cv2.imread('img/baboon.png', cv2.IMREAD_GRAYSCALE)
 #apply_geometric_transformations(img)

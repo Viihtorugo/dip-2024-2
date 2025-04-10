@@ -26,8 +26,38 @@ Notes:
 
 import cv2 as cv
 import numpy as np
-import scikitimage as ski
+import skimage as ski
+#import matplotlib.pyplot as plt
+
+def count_pixels(img):
+    
+    freq_pixels = []
+
+    for i in range(0, 256):
+        freq_pixels.append(0)
+        
+    h, w, c = img.shape
+
+    for c in range(c):
+        for y in  range(h):
+            for x in  range(w):
+                freq_pixels[img[y, x][c]] += 1
+    
+    return freq_pixels
 
 def match_histograms_rgb(source_img: np.ndarray, reference_img: np.ndarray) -> np.ndarray:
-    # Your implementation here
-    pass
+
+    #hist_source = count_pixels(source_img)
+    #hist_reference = count_pixels(reference_img)
+    matched = ski.exposure.match_histograms(source_img, reference_img, channel_axis=-1)
+
+    
+    #plt.imshow(matched)
+    #plt.show()
+
+    return matched
+
+#img = cv.imread('source.jpg')
+#img_ref = cv.imread('reference.jpg')
+
+#print(match_histograms_rgb(img, img_ref))
